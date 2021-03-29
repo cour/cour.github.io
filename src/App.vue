@@ -336,9 +336,9 @@ export default {
       this.temppac = parseInt(list[16], 10);
       //Sonde pH, ORP, EC, tempEau
       this.sensorph = parseFloat(list[17]).toFixed(1);
-      this.sensororp = parseFloat(list[18]).toFixed(1);
+      this.sensororp = parseFloat(list[18]).toFixed(0);
       this.sensorec = parseFloat(list[19]).toFixed(1);
-      this.tempwater = parseFloat(list[20]).toFixed(1);
+      this.tempwater = parseFloat(list[20]).toFixed(0);
       console.log("la lumiere true ou false");
       console.log(this.light);
     },
