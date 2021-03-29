@@ -2,7 +2,7 @@
   <div id="app">
     <div id="logo">
       <img
-        :src="require('./assets/bleu_logo+Waterbased+domotic.png')"
+        :src="require('./assets/logotxt.png')"
         alt="menu"
       />
     </div>
@@ -387,7 +387,7 @@ export default {
         const data = await response.text();
         console.log("Reponse à la requête GET :");
         console.log(data); //Debug
-        //this.setData(data);
+        this.setData(data);
       } catch (error) {
         console.log(error);
       }
