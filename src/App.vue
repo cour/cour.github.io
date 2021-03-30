@@ -382,7 +382,7 @@ export default {
     getrequest() {
       try {
         const response = fetch("/get", {
-          method: "POST"
+          method: "GET"
         });
         const data = response.text();
         console.log("Reponse à la requête GET :");
