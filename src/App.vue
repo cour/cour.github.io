@@ -171,7 +171,6 @@
 import Button from "./components/Button.vue";
 import Timer from "./components/Timer.vue";
 
-
 export default {
   name: "App",
   components: {
