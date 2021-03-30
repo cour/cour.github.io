@@ -180,11 +180,11 @@ export default {
   data() {
     return {
       //Récupération donnée des capteurs
-      sensorph: "9.1",
-      sensororp: "330",
-      sensorec: "9.4",
+      sensorph: "8.4",
+      sensororp: "150",
+      sensorec: "0.1",
       tempair: "19",
-      tempwater: "28",
+      tempwater: "25",
       //Récupération API météo
       uv: "6",
       //Activation ou non des éléments
@@ -1133,8 +1133,10 @@ export default {
   },
   /*---------------MOUNTED---------------*/
   mounted: function() {
-    setInterval(this.getrequest, 1000);
+    this.getrequest();
+    //setInterval(this.getrequest, 1000);
   }
+    
 };
 </script>
 
