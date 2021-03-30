@@ -1133,7 +1133,7 @@ export default {
   },
   /*---------------MOUNTED---------------*/
   mounted: function() {
-    setInterval(this.getrequest, 50);
+    setInterval(this.getrequest, 1000);
   }
 };
 </script>
