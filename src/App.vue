@@ -379,12 +379,12 @@ export default {
       }
     },
     /*-----REQUETES GET (on cheat en requetant un POST au lieu d'un GET)-----*/
-    getrequest() {
+    async getrequest() {
       try {
-        const response = fetch("/get", {
+        const response = await fetch("/get", {
           method: "POST"
         });
-        const data = response.text();
+        const data = await response.text();
         console.log("Reponse à la requête GET :");
         console.log(data); //Debug
         this.setData(data);
