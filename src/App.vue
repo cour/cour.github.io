@@ -186,7 +186,7 @@ export default {
       tempair: "19",
       tempwater: "28",
       //Récupération API météo
-      uv: "7",
+      uv: "6",
       //Activation ou non des éléments
       ec: false,
       light: false,
@@ -758,7 +758,7 @@ export default {
     },
     settimerlight() {
       this.postTimerRequest(
-        "TimerEclairage",
+        "timerEclairage",
         this.hourmorninglight,
         this.minutemorninglight,
         this.hournightlight,
@@ -788,7 +788,7 @@ export default {
     },
     settimerpac() {
       this.postTimerRequest(
-        "TimerPAC",
+        "timerPAC",
         this.hourmorningpac,
         this.minutemorningpac,
         this.hournightpac,
@@ -818,7 +818,7 @@ export default {
     },
     settimerfil() {
       this.postTimerRequest(
-        "TimerFiltration",
+        "timerFiltration",
         this.hourmorningfil,
         this.minutemorningfil,
         this.hournightfil,
