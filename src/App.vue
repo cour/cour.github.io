@@ -233,8 +233,8 @@ export default {
     /*-----TRAITEMENT DE DONNEES-----*/
     setData(string) {
       let list = string.split(",");
-      console.log("la liste splitée");
-      console.log(list);
+      //console.log("la liste splitée");
+      //console.log(list);
       //Timer filtration
       this.hourmorningfil = parseInt(list[0], 10);
       this.minutemorningfil = parseInt(list[1], 10);
@@ -339,25 +339,11 @@ export default {
       this.sensororp = parseFloat(list[18]).toFixed(0);
       this.sensorec = parseFloat(list[19]).toFixed(1);
       this.tempwater = parseFloat(list[20]).toFixed(0);
-      console.log("la lumiere true ou false");
-      console.log(this.light);
+      //console.log("la lumiere true ou false");
+      //console.log(this.light);
     },
-    /*-----REQUETES POST-----*/
-    async postRequest(path) {
-      try {
-        const response = await fetch("/" + path, {
-          method: "POST",
-          headers: {
-            //"Content-Type": "application/json" // En-tête du type de données envoyé
-          }
-          //body: JSON.stringify({ params: message })
-        });
-        const data = await response.text();
-        console.log(data); //Debug
-      } catch (error) {
-        console.log(error);
-      }
-    },
+      
+
     async postTimerRequest(
       mode,
       hourmorning,
