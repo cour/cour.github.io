@@ -461,6 +461,11 @@ export default {
     /*-----ELECTROLYSEUR-----*/
     clickec() {
       this.ec = !this.ec;
+        if(this.ec){
+            this.postRequest("mode?params=ElectrolyseurModeAuto");
+        } else {
+            this.postRequest("mode?params=ElectrolyseurModeOff");
+        }
     },
     manuEc() {
       if (this.ec) {
@@ -510,6 +515,11 @@ export default {
     /*-----ECLAIRAGE-----*/
     clicklight() {
       this.light = !this.light;
+        if(this.light){
+            this.postRequest("mode?params=EclairageModeManuel");
+        } else {
+            this.postRequest("mode?params=EclairageModeOff");
+        }
     },
     manuLight() {
       if (this.light) {
@@ -568,6 +578,11 @@ export default {
     /*-----PAC-----*/
     clickpac() {
       this.pac = !this.pac;
+        if(this.pac){
+            this.postRequest("mode?params=PACModeAuto");
+        } else {
+            this.postRequest("mode?params=PACrModeOff");
+        }
     },
     //ATTENTION ! Correspond au timer !!!
     manuPac() {
@@ -598,6 +613,11 @@ export default {
     /*-----FILTRATION-----*/
     clickfiltr() {
       this.filtr = !this.filtr;
+        if(this.filtr){
+            this.postRequest("mode?params=FiltrationModeAuto");
+        } else {
+            this.postRequest("mode?params=FiltrationModeOff");
+        }
     },
     manuFil() {
       if (this.filtr) {
