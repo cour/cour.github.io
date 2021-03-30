@@ -461,11 +461,6 @@ export default {
     /*-----ELECTROLYSEUR-----*/
     clickec() {
       this.ec = !this.ec;
-        if(this.ec){
-            this.postRequest("mode?params=ElectrolyseurModeAuto");
-        } else {
-            this.postRequest("mode?params=ElectrolyseurModeOff");
-        }
     },
     manuEc() {
       if (this.ec) {
@@ -515,11 +510,6 @@ export default {
     /*-----ECLAIRAGE-----*/
     clicklight() {
       this.light = !this.light;
-        if(this.light){
-            this.postRequest("mode?params=EclairageModeManuel");
-        } else {
-            this.postRequest("mode?params=EclairageModeOff");
-        }
     },
     manuLight() {
       if (this.light) {
@@ -578,11 +568,6 @@ export default {
     /*-----PAC-----*/
     clickpac() {
       this.pac = !this.pac;
-        if(this.pac){
-            this.postRequest("mode?params=PACModeAuto");
-        } else {
-            this.postRequest("mode?params=PACrModeOff");
-        }
     },
     //ATTENTION ! Correspond au timer !!!
     manuPac() {
@@ -613,11 +598,6 @@ export default {
     /*-----FILTRATION-----*/
     clickfiltr() {
       this.filtr = !this.filtr;
-        if(this.filtr){
-            this.postRequest("mode?params=FiltrationModeAuto");
-        } else {
-            this.postRequest("mode?params=FiltrationModeOff");
-        }
     },
     manuFil() {
       if (this.filtr) {
@@ -865,7 +845,7 @@ export default {
         this.manuec == false
       ) {
         this.autoec = true;
-        //this.postRequest("mode?params=ElectrolyseurModeAuto"); //Requete pour allumer les l'ec
+        this.postRequest("mode?params=ElectrolyseurModeAuto"); //Requete pour allumer les l'ec
         optionAuto.classList.replace("off", "on");
         optionManu.classList.replace("off", "act");
         optionTimer.classList.replace("off", "act");
@@ -873,7 +853,7 @@ export default {
         this.chocec = false;
         this.autoec = false;
         this.manuec = false;
-        //this.postRequest("mode?params=ElectrolyseurModeOff"); //Requete pour allumer les l'ec
+        this.postRequest("mode?params=ElectrolyseurModeOff"); //Requete pour allumer les l'ec
         //On grise tous les boutons car l'éclairage est OFF
         optionAuto.classList.replace("act", "off");
         optionAuto.classList.replace("on", "off");
@@ -938,14 +918,14 @@ export default {
       let lightcolor = document.getElementById("colorlight");
       if (light && this.manulight == false && this.timerlight == false) {
         this.manulight = true;
-        //this.postRequest("mode?params=EclairageModeManuel"); //Requete pour allumer les eclairages
+        this.postRequest("mode?params=EclairageModeManuel"); //Requete pour allumer les eclairages
         optionManu.classList.replace("off", "on");
         optionTimer.classList.replace("off", "act");
         lightcolor.classList.replace("off", "on");
       } else if (light == false) {
         this.manulight = false;
         this.timerlight = false;
-        //this.postRequest("mode?params=EclairageModeOff"); //Requete pour éteindre les eclairages
+        this.postRequest("mode?params=EclairageModeOff"); //Requete pour éteindre les eclairages
         //On grise tous les boutons car l'éclairage est OFF
         optionManu.classList.replace("act", "off");
         optionManu.classList.replace("on", "off");
@@ -991,14 +971,14 @@ export default {
       let temp = document.getElementById("setTempPac");
       if (pac && this.autopac == false && this.manupac == false) {
         this.autopac = true;
-        //this.postRequest("mode?params=PACModeAuto"); //Requete pour allumer la pac
+        this.postRequest("mode?params=PACModeAuto"); //Requete pour allumer la pac
         optionAuto.classList.replace("off", "on");
         optionManu.classList.replace("off", "act");
         temp.classList.replace("off", "on");
       } else if (pac == false) {
         this.autopac = false;
         this.manupac = false;
-        //this.postRequest("mode?params=PACModeOff"); //Requete pour allumer la pac
+        this.postRequest("mode?params=PACModeOff"); //Requete pour allumer la pac
         //On grise tous les boutons car l'éclairage est OFF
         optionAuto.classList.replace("act", "off");
         optionAuto.classList.replace("on", "off");
@@ -1051,7 +1031,7 @@ export default {
         this.chocfil == false
       ) {
         this.autofil = true;
-        //this.postRequest("mode?params=FiltrationModeAuto"); //Requete pour allumer les l'ec
+        this.postRequest("mode?params=FiltrationModeAuto"); //Requete pour allumer les l'ec
         /*---A ajouter--- Requete POST : Acvtivation lumières mode auto*/
         optionAuto.classList.replace("off", "on");
         optionManu.classList.replace("off", "act");
@@ -1062,7 +1042,7 @@ export default {
         this.autofil = false;
         this.timerfil = false;
         this.chocfil = false;
-        //this.postRequest("mode?params=FiltrationModeOff"); //Requete pour allumer les l'ec
+        this.postRequest("mode?params=FiltrationModeOff"); //Requete pour allumer les l'ec
         //On grise tous les boutons car l'éclairage est OFF
         optionAuto.classList.replace("act", "off");
         optionAuto.classList.replace("on", "off");
@@ -1153,8 +1133,8 @@ export default {
   },
   /*---------------MOUNTED---------------*/
   mounted: function() {
-    //this.getrequest();
-    setInterval(this.getrequest, 1000);
+    this.getrequest();
+    //setInterval(this.getrequest, 1000);
   }
     
 };
