@@ -171,6 +171,7 @@
 import Button from "./components/Button.vue";
 import Timer from "./components/Timer.vue";
 
+
 export default {
   name: "App",
   components: {
@@ -183,7 +184,7 @@ export default {
       sensorph: "9.1",
       sensororp: "330",
       sensorec: "9.4",
-      tempair: "32",
+      tempair: "19",
       tempwater: "28",
       //Récupération API météo
       uv: "7",
@@ -1133,7 +1134,7 @@ export default {
   },
   /*---------------MOUNTED---------------*/
   mounted: function() {
-    setInterval(this.getrequest, 1000);
+    setInterval(this.getrequest, 2000);
   }
 };
 </script>
